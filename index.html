@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actividad de JavaScript</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="body">
+  <header class="hdr">
+    <div class="wrap">
+      <div class="row">
+        <div class="ico"><i class="fa-solid fa-code"></i></div>
+        <div>
+          <h1 class="ttl">Top de lenguajes segun TIOBE</h1>
+          <p class="sub">Los 10 lenguajes seleccionados</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="srch">
+          <i class="fa-solid fa-magnifying-glass sico"></i>
+          <input type="text" id="searchInput" placeholder="Buscar..." class="inp">
+        </div>
+
+        <select id="categoryFilter" class="sel">
+          <option value="all">Todas</option>
+          <option value="web">Web</option>
+          <option value="data">Data / IA</option>
+          <option value="backend">Backend / Sistemas</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="hero">
+      <div class="bg"></div>
+      <div class="cnt">
+        <span class="tag">Presentación Técnica</span>
+        <h2 class="htl">Indice Para Septiembre De 2026</h2>
+        <p class="desc">Explora las características, nivel de popularidad y ejemplos de código.</p>
+      </div>
+    </div>
+
+    <div id="languagesGrid" class="grid"></div>
+
+    <div id="emptyState" class="empty hidden">
+      <i class="fa-solid fa-code-merge eico"></i>
+      <h3 class="ettl">No se encontraron resultados</h3>
+      <p class="esub">Prueba con otra búsqueda.</p>
+    </div>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="box" id="modalContent">
+      <div class="mhdr">
+        <div class="row">
+          <span id="modalIcon" class="mico"></span>
+          <div>
+            <h3 id="modalTitle" class="mttl"></h3>
+            <span id="modalCategory" class="bdg"></span>
+          </div>
+        </div>
+        <button id="closeModal" class="cbtn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <div class="mbdy">
+        <div>
+          <h4 class="lbl">Descripción</h4>
+          <p id="modalDescription" class="txt"></p>
+        </div>
+
+        <div class="info">
+          <div>
+            <p class="lbl">Creador / Año</p>
+            <p id="modalAuthor" class="val"></p>
+          </div>
+          <div>
+            <p class="lbl">Popularidad</p>
+            <p id="modalPopularity" class="pop"></p>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="lbl">Características</h4>
+          <ul id="modalFeatures" class="fgrid"></ul>
+        </div>
+
+        <div>
+          <h4 class="lbl">Código</h4>
+          <div class="code">
+            <pre><code id="modalCode" class="src"></code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="ftr">
+    <p>Top 10 Lenguajes de Programación — HTML, CSS, JS</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
